@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.starbucks.mobilecard" platformBuildVersionCode="30" platformBuildVersionName="11">
+    <permission android:name="com.starbucks.mobilecard.permission.ACCESS_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.starbucks.mobilecard.permission.ACCESS_PERMISSION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <application android:allowBackup="false" android:appComponentFactory="o.PushbackInputStream" android:extractNativeLibs="true" android:icon="@mipmap/ic_launcher" android:label="@string/APKTOOL_DUMMYVAL_0x7f12016e" android:largeHeap="false" android:logo="@drawable/ic_welcome_siren" android:name="o.uv" android:networkSecurityConfig="@xml/APKTOOL_DUMMYVAL_0x7f160002" android:permission="com.starbucks.mobilecard.permission.ACCESS_PERMISSION" android:resizeableActivity="false" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1302ba">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <meta-data android:name="a" android:value=""/>
+        <meta-data android:name="com.google.android.gms.version" android:value="12451000"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDsmB49qNpLvX0cxpiWwZXO6QsqZbD7e7c"/>
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_inn9MMhTDXEfQzsEw0Pa8lbfvtfHCG85"/>
+        <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_mca8GJpVr5BmMrAtu0QC4jpnEEpMs3od"/>
+        <meta-data android:name="asset_statements" android:resource="@string/APKTOOL_DUMMYVAL_0x7f1201a2"/>
+        <meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true"/>
+        <meta-data android:name="android.security.net.config" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f160002"/>
+        <activity android:launchMode="singleTop" android:name=".main.activity.LandingPageActivity" android:noHistory="true" android:permission="" android:screenOrientation="portrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f130138">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="starbucks"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="starbucks.app.link" android:scheme="https"/>
+                <data android:host="starbucks.test-app.link" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name=".home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f130135">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f160003"/>
+        </activity>
+        <activity android:label="" android:launchMode="singleTask" android:name=".chasepay.ChaseActivity" android:permission="" android:theme="@style/APKTOOL_DUMMYVAL_0x7f13018f">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="chasepay" android:scheme="starbuckschasepay"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="o.ahq" android:screenOrientation="portrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f130135"/>
+        <activity android:name="com.chase.payments.sdk.util.LocationPermissionActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f13026d"/>
+        <receiver android:exported="false" android:name="o.alS">
+            <intent-filter>
+                <action android:name="com.starbucks.mobilecard.notification.receiptclick"/>
+                <action android:name="com.starbucks.mobilecard.notification.tip1click"/>
+                <action android:name="com.starbucks.mobilecard.notification.tip2click"/>
+                <action android:name="com.starbucks.mobilecard.notification.tip3click"/>
+                <action android:name="com.starbucks.mobilecard.notification.tipapplied"/>
+                <action android:name="com.starbucks.mobilecard.notification.tipfailed"/>
+                <action android:name="com.starbucks.mobilecard.notification.notipclick"/>
+                <action android:name="com.starbucks.mobilecard.notification.historyretrieved"/>
+                <action android:name="com.starbucks.mobilecard.notification.historyfailed"/>
+                <action android:name="com.starbucks.mobilecard.notification.deletenotification"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="o.alL">
+            <intent-filter>
+                <action android:name="com.starbucks.mobilecard.notification.deleteinboxnotification"/>
+                <action android:name="com.starbucks.mobilecard.notification.deleteinboxindividualnotification"/>
+                <action android:name="com.starbucks.mobilecard.notification.inboxsummaryclickdevice"/>
+                <action android:name="com.starbucks.mobilecard.notification.inboxindividualclickdevice"/>
+                <action android:name="com.starbucks.mobilecard.notification.inboxindividualclickwear"/>
+                <action android:name="com.starbucks.mobilecard.notification.wearaction"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.starbucks.mobilecard.order.search.MenuPreviousSearchProvider" android:exported="false" android:name=".order.search.MenuPreviousSearchProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="o.LJ"/>
+        <service android:enabled="true" android:exported="false" android:name=".urbanairship.tipping.TippingRequestJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:label="@string/APKTOOL_DUMMYVAL_0x7f120234" android:name="com.google.android.libraries.places.widget.AutocompleteActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f13015d" android:windowSoftInputMode="adjustResize"/>
+        <provider android:authorities="com.starbucks.mobilecard.ApptentiveAttachmentFileProvider" android:enabled="true" android:exported="false" android:grantUriPermissions="true" android:name="com.apptentive.android.sdk.debug.ApptentiveAttachmentFileProvider"/>
+        <activity android:name="com.apptentive.android.sdk.ApptentiveViewActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f130040"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.apptentive.android.sdk.debug.LogBroadcastReceiver"/>
+        <receiver android:exported="false" android:name="com.apptentive.android.sdk.module.engagement.notification.ApptentiveNotificationInteractionBroadcastReceiver"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ml.vision.VisionRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ml.common.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <service android:name="com.urbanairship.push.fcm.AirshipFirebaseMessagingService">
+            <intent-filter android:priority="-1">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:exported="true" android:name="androidx.biometric.DeviceCredentialHandlerActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f130130"/>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+        <activity android:configChanges="orientation|screenSize" android:name="o.awN" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation|screenSize" android:name="o.awM" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:name="o.atL" android:theme="@style/APKTOOL_DUMMYVAL_0x7f130324">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+        </activity>
+        <activity android:exported="false" android:name="o.atG" android:theme="@style/APKTOOL_DUMMYVAL_0x7f13030b">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+        </activity>
+        <activity android:exported="false" android:name="o.atP" android:theme="@style/APKTOOL_DUMMYVAL_0x7f13032e">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+        </activity>
+        <activity android:exported="false" android:name="o.avk" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:exported="false" android:name="o.auU"/>
+        <activity android:exported="false" android:label="@string/APKTOOL_DUMMYVAL_0x7f120bb8" android:name="o.auQ"/>
+        <activity android:exported="false" android:name="o.awz" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1302fb">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+        </activity>
+        <activity android:exported="false" android:name="o.asL" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+        </activity>
+        <activity android:exported="false" android:name="o.arY" android:theme="@style/APKTOOL_DUMMYVAL_0x7f13034a">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+            <intent-filter>
+                <action android:name="com.urbanairship.actions.SHOW_RATE_APP_INTENT_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="o.arG">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+        </activity>
+        <service android:name="o.aul"/>
+        <service android:label="Segments Service" android:name="o.auP"/>
+        <service android:name="com.urbanairship.job.AndroidJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="o.avn">
+            <intent-filter android:priority="-999">
+                <action android:name="com.urbanairship.push.OPENED"/>
+                <category android:name="com.starbucks.mobilecard"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="o.auK">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.starbucks.mobilecard.urbanairship.provider" android:exported="false" android:name="o.arM"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.starbucks.mobilecard.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="o.AssociationRequest"/>
+        <provider android:authorities="com.starbucks.mobilecard.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="o.ECParameterSpec"/>
+    </application>
+</manifest>

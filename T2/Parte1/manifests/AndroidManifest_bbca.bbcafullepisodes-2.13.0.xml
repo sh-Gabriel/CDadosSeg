@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" package="com.bbca.bbcafullepisodes" platformBuildVersionCode="28" platformBuildVersionName="9">
+    <uses-feature android:name="android.hardware.touchscreen" android:required="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:exported="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.amctve.mobile.MobileAppClass" android:resizeableActivity="false" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.amctve.mobile.ui.screens.home.HomeMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.amctve.mobile.ui.screens.home.HomeTabletActivity" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.amctve.mobile.ui.screens.splash.SplashScreenMobileActivity">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.bbcamerica.com" android:scheme="https"/>
+                <data android:host="www.bbcamerica.com" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="ry8sy.app.goo.gl" android:scheme="http"/>
+                <data android:host="ry8sy.app.goo.gl" android:scheme="https"/>
+                <data android:host="app" android:scheme="@string/campaign_scheme"/>
+                <data android:host="@string/web_url" android:scheme="https"/>
+                <data android:host="app" android:scheme="@string/campaign_scheme_upper"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="com.amctve.mobile.Launcher" android:targetActivity="com.amctve.mobile.ui.screens.splash.SplashScreenMobileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:name="com.amctve.mobile.ui.screens.show.ShowMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.show.ShowTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:launchMode="singleTop" android:name="com.amctve.mobile.ui.screens.content_detail.ContentDetailMobileActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.amctve.mobile.ui.screens.playback.ScreenPlaybackMobileActivity" android:screenOrientation="sensorLandscape" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.settings.list.SettingsMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.settings.list.SettingsTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:launchMode="singleTop" android:name="com.amctve.mobile.ui.screens.settings.item.SettingMobileContentActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:launchMode="singleTop" android:name="com.amctve.mobile.ui.screens.settings.item.SettingTabletContentActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.search.SearchMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.amctve.mobile.ui.screens.search.SearchTabletActivity" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.amctve.mobile.ui.screens.signin.SignInMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.signin.SignInTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.signin.WebViewSignInActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.signin.WebViewSignInTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <service android:exported="false" android:name="com.amctve.mobile.messaging.PushInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.amctve.mobile.messaging.PushMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.amctve.mobile.ui.screens.premiere.PremierInfoMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.premiere.PremierInfoTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <meta-data android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME" android:value="com.amctve.mobile.ui.basecomponents.chromecast.CastOptionsProvider"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:name="com.amctve.mobile.ui.screens.downloads.DownloadedSeasonMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.downloads.DownloadedSeasonTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.downloads.DownloadsMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.downloads.DownloadsTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.downloads.DownloadQueueMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.downloads.DownloadQueueTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.webviewnav.WebViewNavigationMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.webviewnav.WebViewNavigationTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:launchMode="singleTask" android:name="com.amctve.mobile.ui.screens.amcSignUp.view.AmcSignUpMobileActivity" android:screenOrientation="portrait" android:theme="@style/SignUpAppTheme"/>
+        <activity android:launchMode="singleTask" android:name="com.amctve.mobile.ui.screens.amcSignUp.view.AmcSignUpTabletActivity" android:theme="@style/SignUpAppTheme"/>
+        <activity android:launchMode="singleTask" android:name="com.amctve.mobile.ui.screens.amcSignIn.view.AmcSignInMobileActivity" android:screenOrientation="portrait" android:theme="@style/SignUpAppTheme"/>
+        <activity android:launchMode="singleTask" android:name="com.amctve.mobile.ui.screens.amcSignIn.view.AmcSignInTabletActivity" android:theme="@style/SignUpAppTheme"/>
+        <activity android:name="com.amctve.mobile.ui.screens.landing_page.view.LandingPageMobileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.amctve.mobile.ui.screens.landing_page.view.LandingPageTabletActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.amctve.mobile.ui.screens.exceptions.ExceptionsMobileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.amctve.mobile.ui.screens.exceptions.ExceptionsTabletActivity"/>
+        <activity android:name="com.amctve.mobile.ui.screens.signin_info.SignInInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.amctve.mobile.ui.screens.signin_info.SignInInfoTabletActivity"/>
+        <activity android:name="com.amctve.mobile.ui.screens.extras.ExtrasMobileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.amctve.mobile.ui.screens.extras.ExtrasTabletActivity"/>
+        <activity android:name="com.amctve.mobile.ui.screens.settings.need_help.NeedHelpMobileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.amctve.mobile.ui.screens.settings.need_help.NeedHelpTabletActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.device.iap.ResponseReceiver">
+            <intent-filter>
+                <action android:name="com.amazon.inapp.purchasing.NOTIFY" android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:exported="false" android:label="AccessEnabler service" android:name="com.adobe.adobepass.accessenabler.api.AccessEnablerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.amctve.mobile.playback.PlaybackService"/>
+        <receiver android:exported="true" android:name="com.amcn.core.analytics.impl.google.ReferralReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.adobe.adobepass.accessenabler.customtab.CustomTabManager">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.adobe.adobepass.accessenabler.customtab.CustomTabGetAuthN" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="@string/redirect_uri" android:scheme="adobepass"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP" android:value="true"/>
+        <service android:name="com.amcn.core.db.CatalogService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver"/>
+        <service android:exported="false" android:name="com.google.android.gms.cast.framework.media.MediaNotificationService"/>
+        <service android:exported="false" android:name="com.google.android.gms.cast.framework.ReconnectionService"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.bbca.bbcafullepisodes.firebaseperfprovider" android:exported="false" android:initOrder="101" android:name="com.google.firebase.perf.provider.FirebasePerfProvider"/>
+        <service android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="com.leanplum.LeanplumPushFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.leanplum.LeanplumFcmRegistrationJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="true" android:exported="false" android:name="com.leanplum.LeanplumPushFcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="false" android:name="com.leanplum.LeanplumPushReceiver">
+            <intent-filter>
+                <action android:name="com.leanplum.LeanplumPushFirebaseMessagingService"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <meta-data android:name="com.google.android.play.billingclient.version" android:value="2.0.3"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.android.billingclient.api.ProxyBillingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.penthera.virtuososdk.license.manager.impl" android:value="com.penthera.virtuososdk.client.drm.LicenseManager"/>
+        <meta-data android:name="com.penthera.virtuososdk.clienthttpservice.enabled" android:value="true"/>
+        <service android:exported="false" android:label="VirtuosoClientHTTPService" android:name="com.penthera.virtuososdk.service.VirtuosoClientHTTPService">
+            <intent-filter>
+                <action android:name="virtuoso.intent.action.START_VIRTUOSO_CLIENT_HTTP_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:label="VirtuosoService" android:name="com.penthera.virtuososdk.service.VirtuosoService">
+            <intent-filter>
+                <action android:name="virtuososdk.intent.action.START_VIRTUOSO_SERVICE_2.2.4242"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="com.penthera.virtuososdk.service.VirtuosoService$SystemBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.penthera.virtuososdk.service.VirtuosoService$ServiceMessageReceiver"/>
+        <receiver android:enabled="true" android:name="com.penthera.virtuososdk.interfaces.toolkit.VirtuosoContentBox$ClientMessageReceiver"/>
+        <service android:name="com.leanplum.LeanplumPushRegistrationService"/>
+        <service android:name="com.leanplum.LeanplumLocalPushListenerService"/>
+        <provider android:authorities="com.bbca.bbcafullepisodes.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <receiver android:exported="false" android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="true" android:name="com.google.android.gms.appinvite.PreviewActivity" android:theme="@style/Theme.AppInvite.Preview">
+            <intent-filter>
+                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.bbca.bbcafullepisodes.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <provider android:authorities="com.bbca.bbcafullepisodes.mobileadsinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.android.gms.ads.MobileAdsInitProvider"/>
+        <provider android:authorities="com.bbca.bbcafullepisodes.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <service android:enabled="true" android:exported="false" android:name="com.optimizely.ab.android.datafile_handler.DatafileService"/>
+        <service android:exported="false" android:name="com.optimizely.ab.android.event_handler.EventIntentService"/>
+        <service android:name="com.optimizely.ab.android.shared.JobWorkService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.optimizely.ab.android.shared.ScheduledJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+    </application>
+</manifest>
