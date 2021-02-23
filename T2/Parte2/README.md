@@ -10,11 +10,14 @@ Recebe como entrada obrigatória a especificação de um arquivo(`-a`) ou de um 
 Considera-se que o(s) arquivo(s) passado(s) sejam compatíveis com o uso da biblioteca `pefile`
 Requer um, dentre dois, parâmetro obrigatório: `-dp` em conjunto com o caminho do diretório que conmtenha os executáveis ou `-a` seguido do arquivo executável
 
+Exemplo de execução: `python3 parte2.py -dp ./exes`
 
 ## Script compare
 
 Recebe como entradas obrigatórias os dois arquivos PE para comparar suas sessões.
 Considera-se que o(s) arquivo(s) passado(s) sejam compatíveis com o uso da biblioteca `pefile`
+
+Exemplo de execução: `python3 compare.py ./exes/calc.exe ./exes/wmplayer.exe`
 
 ## Script output
 
