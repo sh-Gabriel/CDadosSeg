@@ -3,6 +3,7 @@ from sys import argv, exit, stderr
 import argparse
 from output import output_f
 
+#given the xml line, formats it to append to the dictionary
 def format_permissions(line=None):
     if(line == None):
         print("Error accessing the xml line to format permissions",file=stderr)
@@ -11,6 +12,7 @@ def format_permissions(line=None):
         tmp = line.split(".permission")[1].strip()
         return tmp.split("\"")[0]
 
+#iterate through the .xml files to create the dictionary with the permissions
 def dict_building(files=None):
     if(files == None):
         print("Error when accessing the .xml archive list",file=stderr)
@@ -26,11 +28,9 @@ def dict_building(files=None):
             for xml_line in xml:
                 if("uses-permission" in xml_line and ".permission" in xml_line):
                     app[key].append(format_permissions(line=xml_line))
-                    # print(xml_line)
-    # print(app)
     return(app)
 
-
+#iterates through the given directory to gather the .xml files
 def directory_iteration(directory=None):
     if(directory == None):
         print("Error when accessing the directory to iterate", file=stderr)
@@ -45,14 +45,15 @@ def directory_iteration(directory=None):
     return(dict_building(files=iterable))
 
 if __name__ == "__main__":
+    #Command line arguments
     parser = argparse.ArgumentParser()
     parser.add_argument("-dp", "--database_path", default=None, help="Path to the directory containing the xml archives", 
                         required=True, dest="database_path")
     parser.add_argument("-ppa", "--permissions_per_apk", default=True, help="Print the found permissions per apk. Default to true", 
                         required=False, dest="ppa", action="store_false")
-    parser.add_argument("-u", "--unique", default=False, help="Prints only the unique preferences per apk. Default to false",
+    parser.add_argument("-u", "--unique", default=False, help="Prints only the unique permissions per apk. Default to false",
                         required=False, dest="unique", action="store_true")
-    parser.add_argument("-c", "--common", default=False, help="Prints only the common preferences for all the apks. Default to false",
+    parser.add_argument("-c", "--common", default=False, help="Prints only the common permissions for all the apks. Default to false",
                         required=False, dest="common", action="store_true")
     
     args = parser.parse_args()
@@ -63,7 +64,6 @@ if __name__ == "__main__":
             print("The given path doesn't exists", file=stderr)
             exit(1)
     except:
-        print("Path argument not found",file=stderr)
         exit(1)
     data = directory_iteration(directory=args.database_path)
     output_f(data, args)

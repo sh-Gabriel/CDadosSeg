@@ -3,7 +3,7 @@ import pefile
 from sys import argv, exit, stderr
 import argparse
 from os import listdir, path
-
+from output import output_f
 
 def is_executable(charac=False):
     if not charac:
@@ -40,12 +40,6 @@ def dict_building(pe_list = False):
                 sect_permissions[item].append(string.split("'")[1])
     return sect_permissions
 
-def print_output(permissions=False):
-    if not permissions:
-        exit(1)
-    for i in permissions.keys():
-        print("O executável ", i.split("/")[-1], " possui as seguintes seções executáveis: ", permissions[i], "\n")
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", "--archive", default=None, help="Path to the directory containing the xml archives", 
@@ -78,4 +72,4 @@ if __name__ == "__main__":
     else:
         archives.append(args.archive)
     permissions = dict_building(pe_list=archives)
-    print_output(permissions=permissions)
+    output_f(data=permissions)

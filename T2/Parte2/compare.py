@@ -1,6 +1,6 @@
 from sys import argv, stderr
 import pefile
-
+from output import output_f_compare
 
 def get_sections(pes=False):
     if not pes:
@@ -22,13 +22,12 @@ def compare(sections1=False, sections2=False):
         for contentB in sections2:
             if contentB == contentA:
                 common.append(contentA)
-    print("As seguintes seções são comuns a ambos os arquivos: ", common, "\n")
-    print("As seguintes seções pertencem somente ao PRIMEIRO PE: ", [i for i in sections1 if i not in common], "\n")
-    print("As seguintes seções pertencem somente ao SEGUNDO PE", [i for i in sections2 if i not in common], "\n")
+    return common
 
 if __name__ == "__main__":
     if len(argv) != 3:
         print("Wrong number of arguments",stderr)
         exit(1)
     sections1, sections2 = get_sections(pes=argv)
-    compare(sections1=sections1, sections2=sections2)
+    common = compare(sections1=sections1, sections2=sections2)
+    output_f_compare(sections1=sections1, sections2=sections2, common=common)

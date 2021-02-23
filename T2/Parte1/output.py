@@ -1,5 +1,6 @@
 from sys import stderr, exit
 
+#prints the specified 'header'
 def print_header(head=False):
     if not head:
         print("Error when trying to print output header", file=stderr)
@@ -8,6 +9,7 @@ def print_header(head=False):
     print(head+"\n\n")
     print("=====================================\n\n")
 
+#gets the unique values from the dictionary
 def unique_value(key=False, value=False, dic=False):
     if not key or not value or not dic:
         exit(1)
@@ -16,7 +18,7 @@ def unique_value(key=False, value=False, dic=False):
             if(value in dic[i]):
                 return False
     return True
-
+#iterate through data getting the permissions unique of each APK
 def unique_permissions(data=False):
     if not data:
         exit(1)
@@ -28,6 +30,7 @@ def unique_permissions(data=False):
         out = key + ": "
         print(key + ": " + str(content) + "\n")
         
+#gets the common values from the dictionary
 def common_value(key=False, value=False, dic=False):
     if not key or not value or not dic:
         exit(1)
@@ -37,6 +40,7 @@ def common_value(key=False, value=False, dic=False):
                 return False
     return True
 
+#iterate trhough data getting the common permissions of the given APKs
 def common_permissions(data=False):
     if not data:
         exit(1)
@@ -48,6 +52,7 @@ def common_permissions(data=False):
                     content.append(value)
     print(content)
 
+#output function
 def output_f(data=False, args=False):
     if not data or not args:
         print("Error when trying to print output",file=stderr)
