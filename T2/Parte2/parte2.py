@@ -24,6 +24,7 @@ def is_executable(charac=False):
     if hex(int(charac, 16)//int(div, 16)).split("x")[1] != str(0):
         return True
     return False
+
 def dict_building(pe_list = False):
     if not pe_list:
         exit(1)
