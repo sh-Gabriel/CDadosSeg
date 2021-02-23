@@ -1,10 +1,4 @@
 # Prática 2
 
--- Discord -> stable version
--- Messenger -> arm64-v8a Android 9.0+ nodpi
--- Waze -> stable version
+Para os scripts apresentados nesta segunda prática da disciplina, continuou-se a utilizar o python em sua versão `3.6.9`
 
-
-
-
-nov 16 2020
