@@ -21,7 +21,6 @@ def dict_building(files=None):
     for f in files:
         key = f.split("_")[1]
         key = key.split(".xml")[0]
-        # print(key)
         if(not key in app):
             app[key] = []
         with open(f, "r") as xml:

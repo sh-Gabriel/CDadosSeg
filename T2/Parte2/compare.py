@@ -2,6 +2,7 @@ from sys import argv, stderr
 import pefile
 from output import output_f_compare
 
+#returns the sections on each of the given PEs
 def get_sections(pes=False):
     if not pes:
         exit(1)
@@ -14,6 +15,7 @@ def get_sections(pes=False):
     
     return sections[0], sections[1]
 
+#returns the common sections of the given PEs to be used on the output
 def compare(sections1=False, sections2=False):
     if not sections1 or not sections2:
         exit(1)

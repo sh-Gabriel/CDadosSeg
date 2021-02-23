@@ -5,8 +5,10 @@ import argparse
 from os import listdir, path
 from output import output_f
 
+#Verify if the given PE section is executable
 def is_executable(charac=False):
     if not charac:
+        print("Error when trying to verify ir the given section is executable", file=stderr)
         exit(1)
     b = []
     for i in range(len(charac)):
@@ -25,8 +27,10 @@ def is_executable(charac=False):
         return True
     return False
 
+#iterate through the given PEs and returns the dictionary containing each PE executable sections
 def dict_building(pe_list = False):
     if not pe_list:
+        print("Error when trying to use the list of the given PEs", file=stderr)
         exit(1)
     
     sect_permissions={}
