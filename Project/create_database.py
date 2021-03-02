@@ -20,7 +20,9 @@ def populate_data():
                         ,M_data.NUM_SUBJ_IMP
                         ,M_data.AVG_SENT_LEN
                         ,M_data.SPEL_ERROR]
-            csv_writer.writerow(data_rows)
+            header = [X.name for X in data_rows[1:]]
+            header.insert(0, data_rows[0])
+            csv_writer.writerow(header)
             #pwd to construct others
             pwd = "./Fake.br-Corpus/full_texts/" + cat + "/"
             pwd_f = "./Fake.br-Corpus/full_texts/" + cat + "-meta-information/"
@@ -44,12 +46,12 @@ def populate_data():
                     csv_writer.writerow(joint)
 
 if __name__ == "__main__":
-    git.Git("./").clone("https://github.com/roneysco/Fake.br-Corpus.git")
+    # git.Git("./").clone("https://github.com/roneysco/Fake.br-Corpus.git")
     # print("path %s" % os.getcwd())
     # print(os.listdir(os.getcwd()))
-    try:
-        os.mkdir("./database")
-    except:
-        print("failed")
-        exit(1)
+    # try:
+    #     os.mkdir("./database")
+    # except:
+    #     print("failed")
+    #     exit(1)
     populate_data()
