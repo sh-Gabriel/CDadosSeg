@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#The cloned repo
+Fake.br-Corpus/
+*.csv
