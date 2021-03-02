@@ -7,3 +7,6 @@ Respondendo às perguntas:
 - 
 
 - O dataset teve que ser feito 'à mão', então as colunas nele presentes já são somente as que interessam. A seleção desses atributos deve-se ao interesse em analisá-las conforme os resultados das classificações.
+
+
+--- Atividade não concluída
