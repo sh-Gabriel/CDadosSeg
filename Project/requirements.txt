@@ -1,0 +1,7 @@
+numpy
+GitPython
+pandas
+nltk
+unidecode
+matplotlib
+scikit-learn
